@@ -48,21 +48,21 @@ main {
     font-family: 'Raleway', sans-serif;
     background-color: #FEFFAF;
     color: #293845;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 80px 7%;
+    height: 100vh;
 }
 
 article {
-    padding: 80px 0;
+    padding: 10px 0;
     width: 100%;
 }
 
 header {
-    padding: 60px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -83,7 +83,7 @@ header p {
 
 .formulaire {
     background-color: #fff;
-    padding: 80px;
+    padding: 60px 80px;
     border-radius: 5px;
     box-shadow: 0px 0px 45px rgba(0,0,0,0.05)
 }
@@ -131,7 +131,7 @@ input[type="radio"]:checked+label {
 
 input[type="number"] {
     margin: 20px 0px;
-    padding: 20px 30px;
+    padding: 10px 30px;
     border: 2px solid #29384570;
     color: #ff7b42;
     font-size: 1.2rem;
@@ -145,10 +145,10 @@ button {
     background-color: #ff7b42;
     display: inline-block;
     border: none;
-    padding: 20px 30px; 
-    font-size: 1.5rem;
+    padding: 20px 10px; 
+    font-size: 1.2rem;
     color: #fff;
-    width: 300px;
+    width: 200px;
     margin: 0 auto;
     box-shadow: 0px 0px 45px rgba(0,0,0,0.08);
     border-radius: 5px;
@@ -158,4 +158,30 @@ button {
 button:hover {
     cursor: pointer;
     transform: translateY(-5px);
+}
+
+#result {
+    opacity: 0;
+    transition: all .4s;
+}  
+
+#result {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 900;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px; 
+    background-color: rgb(196, 255, 208);
+    color: green;
+    text-align: center
+}
+
+.is-visible {
+    opacity: 1!important;
+}
+
+footer {
+    padding: 50px 0px 0px 0px;
+    color: #00000050;
 }

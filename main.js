@@ -93,6 +93,7 @@ form.addEventListener("submit", (e) => {
   console.log(`Pour un ${bienType} de ${bienSize} m2, construit ${bienAge}, le prix de votre DPE est estimé à ${price.toFixed(2)} €`)
 
   const result = document.querySelector('#result')
+  result.classList.add("is-visible")
   result.textContent = `Pour un ${bienType} de ${bienSize} m2, construit ${bienAge}, le prix de votre DPE est estimé à ${price.toFixed(2)} €`
 
 })
