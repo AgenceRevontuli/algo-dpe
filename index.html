@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculateur de prix pour la réalisation d'un DPE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" type="module" defer></script>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Calculateur de prix pour la réalisation d'un DPE</h1>
+      <p>Renseignez le formulaire ci-dessous pour obtenir une estimation pour la réalisation de votre Diagnostique de Performance Énérgétique</p>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    </header>
+    <article>
+      <section class="formulaire">
+        <h2>À propos de votre bien</h2>
+        <form id="form">
+          <div>
+            <label for="bien">Type de bien :</label>
+            <div class="form-options">
+              <input type="radio" id="maison" name="bien" value="Maison">
+              <label for="maison">Maison</label><br>
+              <input type="radio" id="appartement" name="bien" value="Appartement">
+              <label for="appartement">Appartement</label><br>
+              <input type="radio" id="immebule" name="bien" value="Immeuble">
+              <label for="immebule">Immeuble</label><br>
+              <input type="radio" id="bureau" name="bien" value="Bureau">
+              <label for="bureau">Bureaux</label><br>
+            </div>
+          </div>
+          <div>
+            <label for="annee_construction">Année de construction :</label>
+            <div class="form-options">
+              <div class="radio-input">
+                <input type="radio" id="option1" name="annee_construction" value="Avant 1950">
+                <label for="option1">Avant 1950</label>
+              </div>
+              <input type="radio" id="option2" name="annee_construction" value="Entre 1950 et 1980">
+              <label for="option2">Entre 1950 et 1980</label>
+              <input type="radio" id="option3" name="annee_construction" value="Entre 1980 et 2000">
+              <label for="option3">Entre 1980 et 2000</label>
+              <input type="radio" id="option4" name="annee_construction" value="Entre 2000 et 2012">
+              <label for="option4">Entre 2000 et 2012</label>
+              <input type="radio" id="option5" name="annee_construction" value="Après 2012">
+              <label for="option5">Après 2012</label>
+            </div>
+          </div>
+          <div>
+            <label for="surface">Surface en m² :</label>
+            <div>
+              <input type="number" id="surface" name="surface" />
+            </div>
+          </div>
+          <button type="submit">Calculer le prix</button>
+        </form>
+      </section>
+    </article>
+    <article id="result"></article>
+  </main>
+  </body>
+</html>
