@@ -65,7 +65,7 @@ form.addEventListener("submit", (e) => {
   priceAge = priceEstimator[bienType].agePrice[bienAge];
 
   // Calcul du prix en fonction des m2
-  if (bienSize < 10) {
+  /* if (bienSize < 10) {
     priceSize = bienSize * 9;
   } else if (bienSize <= 20) {
     priceSize = bienSize * 8;
@@ -85,12 +85,23 @@ form.addEventListener("submit", (e) => {
     priceSize = bienSize * prixUnitaireBis;
   } else {
     priceSize = bienSize * 0.9;
+  } */ 
+  if(bienSize <= 50) {
+    priceSize = 90
+  } else if (bienSize > 50 && bienSize <= 100) {
+    priceSize = 120
+  } else if (bienSize > 100 && bienSize <= 150) {
+    priceSize = 150
+  } else if (bienSize > 150 && bienSize <= 200) {
+    priceSize = 185
+  } else {
+    priceSize = 215
   }
 
   price = priceType + priceAge + priceSize;
 
   // Calcul final du prix du DPE 
-  console.log(`Pour un ${bienType} de ${bienSize} m2, construit ${bienAge}, le prix de votre DPE est estimé à ${price.toFixed(2)} €`)
+  console.log(`Pour un ${bienType} de ${bienSize} m2, construit ${bienAge}, DPE à partir de ${price.toFixed(2)} €`)
 
   const result = document.querySelector('#result')
   result.classList.add("is-visible")
