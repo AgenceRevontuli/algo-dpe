@@ -18,47 +18,147 @@
     </header>
     <article>
       <section class="formulaire">
-        <h2>À propos de votre bien</h2>
         <form id="form">
-          <div>
-            <label for="bien">Type de bien :</label>
+          <div id="step1" class="step current  is-visible" data-step="1">
+            <h2>Remplissez ce formulaire pour obtenir une estimation du prix de votre DPE</h2>
+            <p>Estimez le prix de départ de votre DPE en renseignant les champs suivants. Vous ne pouvez passer à l'étape suivante qu'après avoir renseigné vos informations. Si les données sont inexactes ou vous n'avez pas l'information, notre expert se chargera de vous conseiller pour préparer un devis précis pour votre DPE.</p>
             <div class="form-options">
-              <input type="radio" id="maison" name="bien" value="Maison">
-              <label for="maison">Maison</label><br>
-              <input type="radio" id="appartement" name="bien" value="Appartement">
-              <label for="appartement">Appartement</label><br>
-              <input type="radio" id="immebule" name="bien" value="Immeuble">
-              <label for="immebule">Immeuble</label><br>
-              <input type="radio" id="bureau" name="bien" value="Bureau">
-              <label for="bureau">Bureaux</label><br>
+              <h3>Quelle est la raison du DPE ?</h3>
+              <input type="radio" id="vente" name="raison" value="vente" required>
+              <label for="vente">Vente</label><br>
+              <input type="radio" id="location" name="raison" value="location" required>
+              <label for="location">Location</label><br>
+              <input type="radio" id="information" name="raison" value="information" required>
+              <label for="information">Pour information</label><br>
             </div>
-          </div>
-          <div>
-            <label for="annee_construction">Année de construction :</label>
+            <div class="buttons-form">
+              <button class="btn btn-primary btn-next begin" type="button" id="next-button-1" data-step="2" disabled>Démarrer mon estimation</button>
+            </div>
+          </div><!-- end step 1-->
+          <div id="step2" class="step" data-step="2">
+            <h2>Localisation du bien</h2>
             <div class="form-options">
-              <div class="radio-input">
-                <input type="radio" id="option1" name="annee_construction" value="Avant 1950">
-                <label for="option1">Avant 1950</label>
+              <div class="form-duet">
+                <div>
+                  <h3>La ville de votre bien</h3>
+                  <input type="text" id="city" name="city" placeholder="Caen" required />
+                </div>
+                <div>
+                  <h3>Le code postal</h3>
+                  <input type="text" id="cp" name="cp" placeholder="14000" required />
+                </div>
               </div>
-              <input type="radio" id="option2" name="annee_construction" value="Entre 1950 et 1980">
-              <label for="option2">Entre 1950 et 1980</label>
-              <input type="radio" id="option3" name="annee_construction" value="Entre 1980 et 2000">
-              <label for="option3">Entre 1980 et 2000</label>
-              <input type="radio" id="option4" name="annee_construction" value="Entre 2000 et 2012">
-              <label for="option4">Entre 2000 et 2012</label>
-              <input type="radio" id="option5" name="annee_construction" value="Après 2012">
-              <label for="option5">Après 2012</label>
+              <div class="form-uno">
+                <h3>L'adresse de votre bien ?</h3>
+                <input type="text" id="localisation" name="localisation" placeholder="1 rue des brouettes" required />
+              </div>
             </div>
-          </div>
-          <div>
-            <label for="surface">Surface en m² :</label>
-            <div>
-              <input type="number" id="surface" name="surface" />
+            <div class="buttons-form">
+              <button class="btn btn-secondary btn-prev" type="button" id="prev" data-step="3">Précédent</button>
+              <button class="btn btn-primary btn-next" type="button" id="next-button-2" data-step="3" disabled>Suivant</button>
             </div>
-          </div>
-          <button type="submit">Obtenir un devis</button>
+            <p class="error"></p>
+          </div><!-- end step 2-->
+          <div id="step3" class="step" data-step="3">
+              <h2>Information au sujet de votre bien</h2>
+                <div class="form-options">
+                  <h3>De quel type de bien il s'agit ?</h3>
+                  <input type="radio" id="maison" name="bien" value="Maison">
+                  <label for="maison">Maison</label><br>
+                  <input type="radio" id="appartement" name="bien" value="Appartement">
+                  <label for="appartement">Appartement</label><br>
+                  <input type="radio" id="immebule" name="bien" value="Immeuble">
+                  <label for="immebule">Immeuble</label><br>
+                  <input type="radio" id="bureau" name="bien" value="Bureau">
+                  <label for="bureau">Bureaux</label><br>
+                </div>
+                <div class="form-options">
+                  <h3>En quelle année a été construit votre bien ?</h3>
+                  <input type="radio" id="option1" name="annee_construction" value="Avant 1949">
+                  <label for="option1">Avant 1949</label>
+                  <input type="radio" id="option2" name="annee_construction" value="Entre 1950 et 1997">
+                  <label for="option2">Entre 1950 et 1997</label>
+                  <input type="radio" id="option3" name="annee_construction" value="Entre 1998 et 20127">
+                  <label for="option3">Entre 1998 et 2012</label>
+                  <input type="radio" id="option5" name="annee_construction" value="Après 2012">
+                  <label for="option4">Après 2012</label>
+                </div>
+                <div class="form-options">
+                  <h3>Quel système de chauffage équipe votre bien ?</h3>
+                  <input type="radio" id="Chaudière Gaz" name="chauffage" value="Chaudière Gaz">
+                  <label for="Chaudière Gaz">Chadière Gaz</label><br>
+                  <input type="radio" id="Chaudière Fioul" name="chauffage" value="Chaudière Fioul">
+                  <label for="Chaudière Fioul">Chaudière Fioul</label><br>
+                  <input type="radio" id="Pompe à chaleur" name="chauffage" value="Pompe à chaleur">
+                  <label for="Pompe à chaleur">Pompe à chaleur</label><br>
+                  <input type="radio" id="Chauffage Éléctrique" name="chauffage" value="Chauffage Éléctrique">
+                  <label for="Chauffage Éléctrique">Chauffage Éléctrique</label><br>
+                </div>
+                <div class="buttons-form">
+                  <button class="btn btn-secondary btn-prev" type="button" id="prev" data-step="4">Précédent</button>
+                  <button class="btn btn-primary btn-next" type="button" id="next-button-3" data-step="4" disabled>Suivant</button>
+                </div>
+            </div><!-- end step 3-->
+            <div id="step4" class="step" data-step="4">
+              <h2>Taille de votre bien</h2>
+              <div class="form-options">
+                  <div>
+                    <h3>Quelle est la surface de votre bien en m2 ?</h3>
+                    <input type="number" id="surface" placeholder="38" name="surface" required />
+                  </div>
+                  <div>
+                    <h3>Combien de pièces possède votre bien ?</h3>
+                    <input type="number" id="piece" placeholder="2" name="piece"required />
+                  </div>
+              </div>
+              <div class="buttons-form">
+                <button class="btn btn-secondary btn-prev" type="button" id="prev" data-step="5">Précédent</button>
+                <button class="btn btn-primary btn-next" type="button" id="next-button-4" data-step="5" disabled>Suivant</button>
+              </div>
+            </div><!-- end step 4-->
+            <div id="step5" class="step" data-step="5">
+              <h2>Vos informations</h2>
+              <p>Renseignez vos informations pour finaliser l'estimation du prix de votre DPE</p>
+              <div class="form-options">
+                  <div class="form-duet">
+                    <div>
+                      <h3>Votre Prénom</h3>
+                      <input type="text" id="prenom" placeholder="Pierre" name="prenom" required />
+                    </div>
+                    <div>
+                      <h3>Votre Nom</h3>
+                      <input type="text" id="nom" name="nom" placeholder="Dupont" required />
+                    </div>
+                  </div>
+                  <div class="form-uno">
+                    <h3>Votre email</h3>
+                    <input type="email" id="email" placeholder="pierredupont@gmail.com" name="email" required />
+                  </div>
+                  <div class="form-uno">
+                    <h3>Votre numéro de téléphone</h3>
+                    <input type="tel" id="tel" placeholder="0602030405" name="tel" required/>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="optin_commercial" id="optin_commercial">
+                    <label for="optin_commercial">J'ai lu la <a href="/politique-de-confidentialite">politique de confidentialité</a> et j'accèpe le traitement de mes informations  dans le but d'être recontacté par l'équipe commerciale de BRT-Diag et de ses partenaires. Vous pouvez à tout moment exercer vos droit d'accès, de réctification, d'effacement en nous contactant via notre formulaire de contact ou à l'adresse dpo@brtdiag.com.</label>
+                  </div>
+              </div>
+              <div class="buttons-form">
+                <button class="btn btn-secondary btn-prev" id="prev">Précédent</button>
+                <button type="submit" class="btn-primary btn btn-next" id="next-button-5" data-step="6">Obtenir mon estimation</button>
+              </div>
+            </div><!-- end step 5-->
+            <div class="step" id="step6" data-step="6">
+              <h2>Résultat de votre estimation</h2>
+              <p>Voici une estimation du prix de départ de votre DPE que nous pouvons établir avec les informations que vous nous avez fourni. Si vous le souhaitez, nous pouvons établir un devis détaillé et final pour la réalisation de votre DPE. Pour cela, n'hésitez pas à prendre RDV avec notre conseiller.</p>
+              <h3 id="dpe-price"></h3>
+              <p id="result"></p>
+              <div class="btn-div">
+                <button class="btn btn-tertiary">Nous contacter</button>
+                <button class="btn btn-primary">Prendre un RDV pour mon DPE</button>
+              </div>
+            </div>
         </form>
-        <p id="result"></p>
       </section>
     </article>
     <footer>
